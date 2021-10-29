@@ -1,5 +1,5 @@
 # Computer Science A Level Programming Project
-<a href="https://www.javascript.com/"><img src="https://img.shields.io/badge/Made%20with-Godot-blue.svg"/></a>
+<a href="https://godotengine.org/"><img src="https://img.shields.io/badge/Made%20with-Godot-blue.svg"/></a>
 
 <strong>This project is currently in a very early stage, will be updated regularly.</strong>
 
