@@ -21,7 +21,7 @@ func _process(delta):
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Enemy_damager"):
 		modulate = Color("EB5E9D")
-		velocity = -velocity * 6
+		velocity = -velocity * 10
 		hp -= 1
 		stun = true
 		$Stun_timer.start()
