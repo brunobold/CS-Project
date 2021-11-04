@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/circle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Blood_particles.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_bloom = 0.15
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
+[node name="Blood_particles" type="CPUParticles2D"]
+z_index = -10
+amount = 15
+lifetime = 0.2
+explosiveness = 1.0
+texture = ExtResource( 1 )
+spread = 18.9
+gravity = Vector2( 0, 0 )
+initial_velocity = 658.0
+initial_velocity_random = 1.0
+scale_amount = 0.03
+scale_amount_random = 0.08
+color = Color( 0.690196, 0.133333, 0.384314, 0.666667 )
+script = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Freeze_blood" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+autostart = true
+
+[node name="Blood_timeout" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timeout_wait" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Freeze_blood" to="." method="_on_Freeze_blood_timeout"]
+[connection signal="timeout" from="Blood_timeout" to="." method="_on_Blood_timeout_timeout"]
+[connection signal="timeout" from="Timeout_wait" to="." method="_on_Timeout_wait_timeout"]

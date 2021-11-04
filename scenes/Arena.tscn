@@ -21,6 +21,7 @@ position = Vector2( 320, 180 )
 environment = SubResource( 1 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.843137, 0.168627, 0.470588, 1 )
 position = Vector2( 236.235, 191.508 )
 
 [node name="Enemy_spawn_timer" type="Timer" parent="."]
