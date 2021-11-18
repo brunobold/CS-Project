@@ -2,6 +2,8 @@ extends Node
 
 var node_creation_parent = null
 var player = null
+var camera = null
+
 
 var points = 0
 

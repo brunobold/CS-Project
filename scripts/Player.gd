@@ -21,6 +21,9 @@ func _process(delta): # Function is called every frame, however 'delta' acts as 
 	
 	velocity = velocity.normalized() # Smooth player movement at all angles.
 	
+	global_position.x = clamp(global_position.x, 16, 624)
+	global_position.y = clamp(global_position.y, 16, 344)
+	
 	if is_dead == false:
 		global_position += speed * velocity * delta
 	
