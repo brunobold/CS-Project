@@ -1,6 +1,6 @@
 extends Sprite
 
-var speed = 150 # Player speed.
+var speed = 180 # Player speed.
 var velocity = Vector2()
 
 var bullet = preload("res://scenes/Bullet.tscn") # Calling bullet scene.
@@ -39,5 +39,7 @@ func _on_Hitbox_area_entered(area):
 	if area.is_in_group("Enemy"):
 		is_dead = true
 		visible = false
+		if Global.camera != null:
+			Global.camera.screen_shake(20, 0.5)
 		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().reload_current_scene()
